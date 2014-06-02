@@ -30,7 +30,7 @@ switch($data->getMethod()) {
 		/* check for the syllabus_id POST request variable */
 		if ($lesson_request) {
 			// select the requested lesson
-			if ($lessons = $mysqli->query("SELECT lesson_id, topics, description, lesson.lesson_date as sort_date, DATE_FORMAT(lesson_date,'%M %e, %Y' ) as lesson_date ,blogpost , wrapup FROM lesson  WHERE lesson_id = ".$lesson_request)) {
+			if ($lessons = $mysqli->query("SELECT lesson_id, slides, topics, description, lesson.lesson_date as sort_date, DATE_FORMAT(lesson_date,'%M %e, %Y' ) as lesson_date ,blogpost , wrapup FROM lesson  WHERE lesson_id = ".$lesson_request)) {
 				while ($lesson = $lessons->fetch_object()) {
 					$lesson_array[$lesson->lesson_id] = $lesson;
 					/* Select the reading */

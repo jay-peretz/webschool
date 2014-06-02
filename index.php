@@ -213,6 +213,19 @@ var forumArchive = "2013-11-30";
   </div>
 </div>
 
+<div id="news-viewer" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+   <h3>Latest News for Web Developers</h3>
+  </div>
+    <div class="modal-body">
+      <div id="news"></div>
+      </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
+
 <nav class="row">
 <div class="span12">
 <ul class="nav nav-pills">
@@ -227,13 +240,14 @@ $mysqli->close(); // Close the connection
   <!--<li><a href="#" data-toggle="modal" data-target="#final-project">Final Project</a></li>-->
   <li><a href="#" id="profile" data-toggle="modal" data-target="#myprofile">Your Profile</a></li>
    <li><a href="#" id="ccclectures" data-toggle="modal" data-target="#cccconfer">Video Lectures</a></li>
+    <li><a href="#" id="newsmenu" data-toggle="modal" data-target="#news-viewer">News</a></li>
   <li><a href="#" id="logout">Logout</a></li>
 </ul>
 </div>
 </nav>
 
   <div class="row">
-    <div class="span4">  
+    <div class="span3">  
     <h3>Lessons</h3>
     <table id="lesson-list" class="table table-striped">
   <tr>
@@ -252,18 +266,16 @@ $mysqli->close(); // Close the connection
     </table>  
      <h3>Participants</h3>
       <div id="student-list"></div>
-      <h3>News</h3>
-      <div id="news"></div>
+      
      
     </div>
-     <div class="span8"> 
+     <div class="span9"> 
       <h1 id="lesson-topic"></h1>
        <p class="lead" id="lesson-desc"></p>
       
-   <div id="lesson-info"> </div> 
-    <h3>Notes</h3>
-    <p><a target="_blank" class=btn id="lesson-notes" href="#" >Lecture Notes</a></p>
-    <div id="wrapuparea"></div>
+   <div id="lesson-info"></div> 
+   
+    
     </div>
     
     </div>  

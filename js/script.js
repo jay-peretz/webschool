@@ -84,17 +84,14 @@ $(document).ready(function() {
 			console.log(lesson);
 			$("#lesson-topic").html(lesson.topics);
 			$("#lesson-desc").html(lesson.description);
-			$("#lesson-notes").attr("href",getRootPath()+"slides/index.php?lesson="+lesson.lesson_id);
-			if (lesson.wrapup) {
-			$("#wrapuparea").html("<h3>Weekly Wrapup</h3><div class=wrapup>"+lesson.wrapup+"</div>");
-			} else {
-				$("#wrapuparea").html("");
-			}
+			
+			
 			var lessoncontent = "";
-			if (lesson.blogpost) {
-				lessoncontent += "<div class=blog>"+lesson.blogpost+"</div>";
-			};
-			// display any reading assignments for this lesson
+            lessoncontent += '<div class="lessonsidebar">';
+            if (lesson.slides != "") {
+                lessoncontent += '<p><a target="_blank" class=btn id="lesson-notes" href="#" >Lecture Notes</a></p>';
+            }
+            // display any reading assignments for this lesson
 			if (lesson.reads) {
 				lessoncontent += "<h3>Reading</h3>";
 				$.each(lesson.reads, function(index, value) {
@@ -112,14 +109,23 @@ $(document).ready(function() {
 			// display any explore links for this lesson
 			if (lesson.explores) {
 				lessoncontent += "<h3>Explore </h3>";
-				lessoncontent += "<h4>Non-manditory readings and exercises.  Choose the ones that you find interesting.</h4>"; 
 				$.each(lesson.explores, function(index, value) {
 					lessoncontent += '<p><a href="'+lesson.explores[index].url+'">'+lesson.explores[index].description+'</a></p>';
 				});
 			}
+            // display any wrapup comments for this lesson
+           if (lesson.wrapup) {
+               lessoncontent += "<h3>Weekly Wrapup </h3>";
+			    lessoncontent +=  "<div class=wrapup>"+lesson.wrapup+"</div>";
+			} 
+            lessoncontent +=  "</div>";
+			if (lesson.blogpost) {
+				lessoncontent += "<div class=blog>"+lesson.blogpost+"</div>";
+			};
+			
 			// display any assignments for this lesson
 			if (lesson.assignments) {
-				lessoncontent += "<h3>Exercises</h3>";
+				lessoncontent += "<h3>Assignments</h3>";
 				$.each(lesson.assignments, function(assignment_id, assignment) {
 					if (assignment.name)
 						lessoncontent += '<div class="row" data-assignment="'+assignment_id+'"><h5 class="span6">'+assignment.name+'</h5>';
@@ -196,9 +202,13 @@ $(document).ready(function() {
 							}
 						});
 					}
-					lessoncontent += '</div><hr />';
+					lessoncontent += '</div>';
 				});
 			}
+           
+          lessoncontent += '<div class="clearfloats"></div>';
+    
+            
 			$("#lesson-info").html(lessoncontent);
 			// set event to submit homework
 			$(".submit-hw").click(function() {
@@ -403,16 +413,6 @@ $(document).ready(function() {
 				} else {
 					$("#projectdesc").html("");  
 				}
-				//display submissions in student page
-				/*if (syllabus.students[$(this).attr("data-id")].homeworks) {
-					
-					$.each(syllabus.students[$(this).attr("data-id")].homeworks, function(index, value) {
-						if (value.topics) {
-							var hwcontent = value.url ? '<p><a href="'+value.url+'">'+value.topics+'</a></p>' :'<p>'+value.topics+'</p>' ;
-							$("#homeworks").append(hwcontent);
-						}
-					});
-				}*/
 				
 				$("#viewprofile").modal('show');
 			});

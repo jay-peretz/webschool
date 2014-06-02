@@ -63,6 +63,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', end
   margin-bottom: 30px;
   
 }
+.page-header {
+    border-bottom: none;
+}
 .lesson-listing td ,  #general-info-hdr h2 , .student-listing, .view-homework {
 	cursor:pointer;
 }
@@ -168,6 +171,9 @@ div.blog img {
 div#lesson-info h2 {
 	clear:left;
 }
+div.clearfloats {
+    clear: right;
+}
 #course-info {
 	font-weight:normal;
 }
@@ -183,7 +189,7 @@ div#lesson-info h2 {
 	padding:5px;
 }
 .wrapup {
-	background-color:#FFC;
+	
 	padding:20px;
 }
 #gradebook div.modal-body > div.row-fluid {
@@ -194,4 +200,8 @@ div#lesson-info h2 {
 }
 .well {
     padding: 10px;
+}
+.lessonsidebar {
+    width: 33%;
+    float:right;
 }
