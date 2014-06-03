@@ -89,7 +89,7 @@ $(document).ready(function() {
 			var lessoncontent = "";
             lessoncontent += '<div class="lessonsidebar">';
             if (lesson.slides != "") {
-                lessoncontent += '<p><a target="_blank" class=btn id="lesson-notes" href="#" >Lecture Notes</a></p>';
+                lessoncontent += '<p><a target="_blank" class=btn id="lesson-notes" href="../../slides/index.php?lesson='+lessonID+'" >Lecture Notes</a></p>';
             }
             // display any reading assignments for this lesson
 			if (lesson.reads) {
@@ -128,10 +128,10 @@ $(document).ready(function() {
 				lessoncontent += "<h3>Assignments</h3>";
 				$.each(lesson.assignments, function(assignment_id, assignment) {
 					if (assignment.name)
-						lessoncontent += '<div class="row" data-assignment="'+assignment_id+'"><h5 class="span6">'+assignment.name+'</h5>';
+						lessoncontent += '<div class="row assignmentrow"  data-assignment="'+assignment_id+'"><h5 class="span6">'+assignment.name+'</h5>';
                 
 					else
-			lessoncontent += '<div class="row" data-assignment="">';
+			lessoncontent += '<div class="row assignmentrow"   data-assignment="">';
                   
 					// display any exercises for this assignment
 					if (assignment.exercises) {
@@ -367,7 +367,9 @@ $(document).ready(function() {
         $("#cccconfer .modal-body").html(syllabus.lecture_instructions);
 		var i = 1;
 		$.each(syllabus.lessons, function(index, value) {
-			$("#lesson-list").append('<tr class="lesson-listing" data-index='+i+' data-id='+value.lesson_id+'><td>'+value.lesson_date.substr(0,value.lesson_date.indexOf(','))+'</td><td>'+value.topics+'</td></tr>');
+            var lessonDate = new Date(value.sort_date);
+            lessonDate = lessonDate.getMonth() + "/" + lessonDate.getDate();
+            $("#lesson-list").append('<tr class="lesson-listing" data-index='+i+' data-id='+value.lesson_id+'><td>'+lessonDate+'</td><td>'+value.topics+'</td></tr>');
 			++i;
 		});
 		$(".lesson-listing").click(function() {
