@@ -5,7 +5,7 @@ DATE_FORMAT(due_date,"%b %e") due_date, DATE_FORMAT(h.submitted,"%b %e") submitt
 from  jperetz.exercise e left join 
 (select exercise_exercise_id , submitted, homework_id, grade, graded from jperetz.homework where student_email = "'.$_GET['email'].'") h on  (e.exercise_id = h.exercise_exercise_id ) 
 inner join jperetz.lesson l on l.lesson_id = e.lesson_lesson_id  
-where l.syllabus_syllabus_id='.$_GET["syllabus_id"].' order by exercise_id');
+where l.syllabus_syllabus_id='.$_GET["syllabus_id"].' and e.private = 0 order by exercise_id');
 $i = 0;
 while ($homework = $selecthomeworks->fetch_object()) {
     $homeworks[$i] = $homework;
