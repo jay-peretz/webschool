@@ -89,7 +89,7 @@ $(document).ready(function() {
 			var lessoncontent = "";
             lessoncontent += '<div class="lessonsidebar">';
             if (lesson.slides != "") {
-                lessoncontent += '<p><a target="_blank" class=btn id="lesson-notes" href="../../slides/index.php?lesson='+lessonID+'" >Lecture Notes</a></p>';
+                lessoncontent += '<p><a target="_blank" class=btn id="lesson-notes" href="'+getRootPath()+'slides/index.php?lesson='+lessonID+'" >Lecture Notes</a></p>';
             }
             // display any reading assignments for this lesson
 			if (lesson.reads) {

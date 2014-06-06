@@ -21,6 +21,9 @@ blockquote {
 blockquote p {
     font-size:14px;
 }
+.lessonsidebar {
+    background-color:white;
+}
 .jumbotron , .modal-header, .well  {
   position: relative;
   padding: 5px 5px;
