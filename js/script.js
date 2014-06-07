@@ -122,7 +122,6 @@ $(document).ready(function() {
 			if (lesson.blogpost) {
 				lessoncontent += "<div class=blog>"+lesson.blogpost+"</div>";
 			};
-			
 			// display any assignments for this lesson
 			if (lesson.assignments) {
 				lessoncontent += "<h3>Assignments</h3>";
@@ -210,6 +209,7 @@ $(document).ready(function() {
     
             
 			$("#lesson-info").html(lessoncontent);
+            prettyPrint();
 			// set event to submit homework
 			$(".submit-hw").click(function() {
 				var a_id = $(this).parent().parent().attr("data-assignment");

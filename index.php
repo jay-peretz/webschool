@@ -33,9 +33,11 @@ $currentLesson = $uri[ 1 ] ? $uri[ 1 ] : $currentWeek;
 
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script src="<?php echo $root_path; ?>bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo $root_path; ?>prettify/prettify.js"></script>
 <script src="https://login.persona.org/include.js"></script>
 <link href="<?php echo $root_path; ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="<?php echo $root_path; ?>css/styles.css" rel="stylesheet" type="text/css">
+<link href="<?php echo $root_path; ?>prettify/prettify.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 var scriptPath = '<?php echo $_SERVER["SCRIPT_NAME"] ?>';
 var syllabusURI = '<?php echo $uri[ 0 ] ?>';
