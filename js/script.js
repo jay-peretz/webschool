@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	var syllabus;
+    var profileObject;
 	$("#submit-homework , #update-homework , #update-review, #write-review").modal("hide");
 	var getProfile = function(user) {
 		$.ajax({
@@ -10,6 +11,7 @@ $(document).ready(function() {
 		}).done(function( data) {
 			data = $.parseJSON(data);
 			console.log(data);
+            profileObject = data;
 			$('#fullname').text(data.first_name + " " + data.last_name);
 			$("#mygravatar").attr("src","http://www.gravatar.com/avatar/"+data.gravatar_hash);
 			if (data.gallery_URL) {
@@ -124,7 +126,7 @@ $(document).ready(function() {
 			};
 			// display any assignments for this lesson
 			if (lesson.assignments) {
-				lessoncontent += "<h3>Assignments</h3>";
+				
 				$.each(lesson.assignments, function(assignment_id, assignment) {
 					if (assignment.name)
 						lessoncontent += '<div class="row assignmentrow"  data-assignment="'+assignment_id+'"><h5 class="span6">'+assignment.name+'</h5>';
@@ -369,10 +371,11 @@ $(document).ready(function() {
 		$.each(syllabus.lessons, function(index, value) {
             var lessonDate = new Date(value.sort_date);
             lessonDate = lessonDate.getMonth() + "/" + lessonDate.getDate();
-            $("#lesson-list").append('<tr class="lesson-listing" data-index='+i+' data-id='+value.lesson_id+'><td>'+lessonDate+'</td><td>'+value.topics+'</td></tr>');
+            var lessonClass = (value.is_active == 0 && profileObject.type == 'student') ? "lesson-listing" : "lesson-listing isactive";
+            $("#lesson-list").append('<tr class="'+lessonClass+'" data-index='+i+' data-id='+value.lesson_id+'><td>'+lessonDate+'</td><td>'+value.topics+'</td></tr>');
 			++i;
 		});
-		$(".lesson-listing").click(function() {
+		$(".isactive").click(function() {
 			currentLesson = $(this).attr("data-index");
 			showLesson($(this).attr("data-id"));
 			history.pushState({i: currentLesson}, 'Title', scriptPath + "/" + syllabusURI + (currentLesson == currentWeek ? '' : '/' + currentLesson));

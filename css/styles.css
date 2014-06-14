@@ -24,6 +24,10 @@ blockquote p {
 .lessonsidebar {
     background-color:white;
 }
+.assignmentrow {
+   background: #d9edf7; 
+    padding: 10px;
+}
 .jumbotron , .modal-header, .well  {
   position: relative;
   padding: 5px 5px;
