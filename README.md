@@ -9,3 +9,4 @@ Bootstrap 2.3
 Prettifyjs
 Revealjs
 TinyMCE editor
+Mozilla Persona
