@@ -6,7 +6,6 @@ bootstrap/**
 gradebook/**
 images/**
 prettify/**
-projects/**
 slides/barebones.html
 slides/reveal/**
 tinymce/**
