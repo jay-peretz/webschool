@@ -9,9 +9,3 @@ Bootstrap 2.3
 Prettifyjs
 Revealjs
 TinyMCE editor
-=======
-webschool
-=========
-
-An online classroom for instructors
->>>>>>> fa1cc0117bcfc49f71c8cda6d5ce01e60523fa93
