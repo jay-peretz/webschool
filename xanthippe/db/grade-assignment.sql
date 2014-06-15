@@ -1,0 +1,1 @@
+update jperetz.grade set value = value + 2 where assignment_assignment_id = 17 and student_email in (select student_email from jperetz.homework where exercise_exercise_id = 45) and homework_id  > 450;

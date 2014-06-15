@@ -1,5 +1,12 @@
 **.DS_Store
 **_notes
-xanthippe/db/
 xanthippe/includes/sql-jperetz.php
 xanthippe/login-test.php
+bootstrap/**
+gradebook/**
+images/**
+prettify/**
+projects/**
+slides/barebones.html
+slides/reveal/**
+tinymce/**
