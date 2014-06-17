@@ -370,7 +370,7 @@ $(document).ready(function() {
 		var i = 1;
 		$.each(syllabus.lessons, function(index, value) {
             var lessonDate = new Date(value.sort_date);
-            lessonDate = lessonDate.getMonth() + "/" + lessonDate.getDate();
+            lessonDate = (lessonDate.getMonth() + 1) + "/" + lessonDate.getDate();
             var lessonClass = (value.is_active == 0 && profileObject.type == 'student') ? "lesson-listing" : "lesson-listing isactive";
             $("#lesson-list").append('<tr class="'+lessonClass+'" data-index='+i+' data-id='+value.lesson_id+'><td>'+lessonDate+'</td><td>'+value.topics+'</td></tr>');
 			++i;
