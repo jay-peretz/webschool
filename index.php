@@ -43,8 +43,8 @@ var scriptPath = '<?php echo $_SERVER["SCRIPT_NAME"] ?>';
 var syllabusURI = '<?php echo $uri[ 0 ] ?>';
 var user = '<?php print $_SESSION['user']['email'] ?>';
 var syllabus_id = <?php print $syllabus_id; ?>;
-var currentWeek =  1; 
-var currentLesson = 1; 
+var currentWeek =  2; 
+var currentLesson = 2; 
 var forumArchive = "2013-11-30";
 </script>
 <script src="<?php echo $root_path; ?>js/jquery.mobile.custom.min.js"></script>
