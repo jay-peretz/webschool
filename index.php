@@ -34,6 +34,7 @@ $currentLesson = $uri[ 1 ] ? $uri[ 1 ] : $currentWeek;
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script src="<?php echo $root_path; ?>bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo $root_path; ?>prettify/prettify.js"></script>
+<script src="<?php echo $root_path; ?>modernizr/modernizr.js"></script>
 <script src="https://login.persona.org/include.js"></script>
 <link href="<?php echo $root_path; ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="<?php echo $root_path; ?>css/styles.css" rel="stylesheet" type="text/css">
@@ -43,8 +44,8 @@ var scriptPath = '<?php echo $_SERVER["SCRIPT_NAME"] ?>';
 var syllabusURI = '<?php echo $uri[ 0 ] ?>';
 var user = '<?php print $_SESSION['user']['email'] ?>';
 var syllabus_id = <?php print $syllabus_id; ?>;
-var currentWeek =  2; 
-var currentLesson = 2; 
+var currentWeek =  3; 
+var currentLesson = 3; 
 var forumArchive = "2013-11-30";
 </script>
 <script src="<?php echo $root_path; ?>js/jquery.mobile.custom.min.js"></script>

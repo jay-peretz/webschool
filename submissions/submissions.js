@@ -30,7 +30,7 @@ $(document).ready(function() {
            submissions = $.parseJSON(data);	
 		 console.log(submissions); 
 		 for (i = 0; i < submissions.length; i++) {
-			 var submissionclass = submissions[i].value ? "graded" : "well";
+			 var submissionclass = submissions[i].value ? "" : "well";
 			 var content = '<h5 class="'+submissionclass+'"><a href="mailto:'+submissions[i].email+'">'+submissions[i].first_name+' '+submissions[i].last_name+'</a> submitted '+submissions[i].description+' on '+submissions[i].submitted+' GRADE: '+submissions[i].value+' of Weight: '+submissions[i].weight+' &nbsp;<input type=text size="5" />&nbsp;<button data-homeworkid="'+submissions[i].homework_id+'" class="btn submitgrade" type="button">Submit</button></h5>';
 			        
 						  if (submissions[i].URL) {

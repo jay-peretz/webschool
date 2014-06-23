@@ -3,10 +3,12 @@ webschool is a student lesson management system primarily for delivering online 
 webschool is a Javascript PHP JSON SQL application.    The database schema contains 21 tables and a model file for mySQL Workbench is provided.
 
 Javascript Library Dependencies
-
-JQuery
-Bootstrap 2.3
-Prettifyjs
-Revealjs
-TinyMCE editor
-Mozilla Persona
+<ul>
+<li>JQuery</li>
+<li>Bootstrap 2.3</li>
+<li>Prettifyjs</li>
+<li>Revealjs</li>
+<li>TinyMCE editor</li>
+<li>Mozilla Persona</li>
+<li>Modernizr</li>
+</ul>
