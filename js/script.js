@@ -291,6 +291,7 @@ $(document).ready(function() {
 				}
 				$("#review-subject").html($(this).attr("data-reviewee"));
 				$("#submit-review").attr("homework-id",$(this).attr("data-homework"));
+                $("#review-comment").val("");
 				$("#write-review").modal("show");
 			});	
 			$(".remove-homework").click(function() {

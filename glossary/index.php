@@ -30,8 +30,8 @@ var user = '<?php print $_SESSION['user']['email'] ?>';
 <nav class="row">
 <div class="span12">
 <ul class="nav nav-pills">
-   <li><a href="http://santarosa.edu/~jperetz/fall2013/index.php/html5/">HTML5</a></li>
-    <li><a href="http://santarosa.edu/~jperetz/fall2013/index.php/javascript/">Javascript</a></li>
+   <li><a href="http://santarosa.edu/~jperetz/webschool/index.php/html5/">HTML5</a></li>
+    
      <li><a href="../wiki/">Wiki</a></li>
 </ul>
 </div>

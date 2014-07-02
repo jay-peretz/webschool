@@ -8,7 +8,8 @@ $(document).ready(function() {
 		   var openterms = $.parseJSON(data);
 		   var content = '';
 		   $.each(openterms, function(index, value) {			   
-			   content += '<option>'+value.class+':'+value.term+'</option>';			  
+			  // content += '<option>'+value.class+':'+value.term+'</option>';	
+              content += '<option>'+value.term+'</option>';		  
 		   });
 			$("#openterms").html(content);
 	    });

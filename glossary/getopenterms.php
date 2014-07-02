@@ -1,6 +1,6 @@
 <?php 
 require_once('../xanthippe/includes/sql-jperetz.php');
-$selectterms = $mysqli->query("select term,class from term  t left outer join definition d on t.term   =  d.term_term where term_term is null order by term");
+$selectterms = $mysqli->query("select term,class from term  t left outer join definition d on t.term   =  d.term_term where term_term is null and class = 'html5' order by term");
 while ($term = $selectterms->fetch_object()) {
 	$terms[$term->term] = $term;
 }
