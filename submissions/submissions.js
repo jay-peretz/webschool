@@ -46,7 +46,7 @@ $(document).ready(function() {
 						  if (submissions[i].formsanswers) {
 							  $.each(submissions[i].formsanswers, function (index3, value3) {
 								  content += "<p class=formanswers>"+value3.question+'</p><p>'+value3.answer+"</p>";
-							  });
+							 });
 						   };
 					  
  			 

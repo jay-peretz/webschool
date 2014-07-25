@@ -169,17 +169,17 @@ $(document).ready(function() {
                                         lessoncontent += (value2.student_email === user) ? '<a class="btn btn-mini remove-homework" data-id="'+ index2 +'"><i class="icon-remove"></i></a></p>' : '</p>';
 											break;
 										case "form":
-											/*lessoncontent += '<a data-homework="'+ index2 +'" class="view-hw">'+value2.first_name+'</a>';
+											lessoncontent += '<p><a data-reviewee='+ value2.first_name+' data-homework="'+ index2+'" class="btn btn-mini thumbs thumbsup" href="#write-review"><i class="icon-thumbs-up"></i></a>&nbsp;&nbsp;<a data-homework="'+ index2 +'" class="view-hw">'+value2.first_name+'</a>';
 											lessoncontent += '&mdash; ';
 											//display the first non-empty field as the comment
 											for (var value3 in value2.answers) {
 												if (value2.answers[value3].text) {
 													//limit to only 80 characters
-													lessoncontent += value2.answers[value3].text.length > 500 ? value2.answers[value3].text.substring(0,500) + '...' : value2.answers[value3].text;
+													lessoncontent += value2.answers[value3].text.length > 500 ? value2.answers[value3].text.substring(0,500) + '...' : value2.answers[value3].text+"</p>";
 													break;
 												}
 											}
-											lessoncontent += '&nbsp;';*/
+											lessoncontent += '&nbsp;';
 											break;
 										case "test":
 											lessoncontent += '<a data-homework="'+ index2 +'" class="view-hw">'+value2.first_name+'</a>&nbsp;';
@@ -225,7 +225,7 @@ $(document).ready(function() {
 						break;
 					case "form":
 						$.each(lesson.assignments[a_id].exercises[e_id].questions,function(index, question) {
-							exercisecontent += '<p class="span5">'+question.text+'</p><p class="span5"><textarea columns=600 rows=2 class="span5" id="exercise-q'+index+'" name="exercise-q'+index+'" maxlength="400"></textarea></p>';
+							exercisecontent += '<p class="span5">'+question.text+'</p><p class="span5"><textarea columns=600 rows=2 class="span5" id="exercise-q'+index+'" name="exercise-q'+index+'" maxlength="2000"></textarea></p>';
 						});
 						break;
 					case "test":

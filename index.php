@@ -44,8 +44,8 @@ var scriptPath = '<?php echo $_SERVER["SCRIPT_NAME"] ?>';
 var syllabusURI = '<?php echo $uri[ 0 ] ?>';
 var user = '<?php print $_SESSION['user']['email'] ?>';
 var syllabus_id = <?php print $syllabus_id; ?>;
-var currentWeek =  6; 
-var currentLesson = 6; 
+var currentWeek =  11; 
+var currentLesson = 11; 
 var forumArchive = "2013-11-30";
 </script>
 <script src="<?php echo $root_path; ?>js/jquery.mobile.custom.min.js"></script>
@@ -186,7 +186,7 @@ var forumArchive = "2013-11-30";
    <h4 class="span5">Portfolio </h4>
   <p id="studentgalleryurl" class="span5"></p>
    <h4 class="span5">Final Project Proposal</h4>
-  <p id="projectdesc" class="span5"></p>  
+  <p id="projectdesc"></p>  
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">Close</a>
