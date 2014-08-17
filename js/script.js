@@ -156,7 +156,7 @@ $(document).ready(function() {
 							lessoncontent += '<p class="span2"><em>Value '+exercise.weight+'<br>'+(exercise.due_date ? "Due "+exercise.due_date : (assignment.due_date ? "Due "+assignment.due_date : "&nbsp;"))+'</em></p>';
 							// display any homework submissions for this exercise
 							if (exercise.homeworks && (exercise.type == 'url' || exercise.type == 'form')) {
-								lessoncontent += '<div data-exercise="'+ exercise_id +'" class="span8">'
+								lessoncontent += '<div data-exercise="'+ exercise_id +'" class="span5">'
 								$.each(exercise.homeworks,function(index2,value2) {
 								//	lessoncontent += '<p class="muted"><a data-reviewee='+ value2.first_name+' data-homework="'+ index2+'" class="btn btn-mini thumbs thumbsup" href="#write-review"><i class="icon-thumbs-up"></i></a><a data-reviewee='+ value2.first_name+'  data-homework="'+ index2 +'"  class="btn btn-mini thumbs thumbsdown" href="#write-review"><i class="icon-thumbs-down"></i></a>&nbsp;&nbsp;';
 									
