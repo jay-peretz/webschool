@@ -259,6 +259,7 @@ $mysqli->close(); // Close the connection
   </tr>
     </table> 
      <h3>Grades</h3> 
+     <div class="table-responsive">
      <table id="homework-list" class="table table-striped">
   <tr>
     <th scope="col">Title</th>
@@ -267,6 +268,7 @@ $mysqli->close(); // Close the connection
      <th scope="col">Grade</th>
   </tr>
     </table>  
+    </div>
      <h3>Participants</h3>
       <div id="student-list"></div>
       

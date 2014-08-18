@@ -10,7 +10,7 @@ $(document).ready(function() {
 			datatype: "json"
 		}).done(function( data) {
 			data = $.parseJSON(data);
-			console.log(data);
+		//	console.log(data);
             profileObject = data;
 			$('#fullname').text(data.first_name + " " + data.last_name);
 			$("#mygravatar").attr("src","http://www.gravatar.com/avatar/"+data.gravatar_hash);
@@ -83,7 +83,7 @@ $(document).ready(function() {
 		}).done(function( data) {
 			data = $.parseJSON(data);
 			lesson = data[lessonID];
-			console.log(lesson);
+			// console.log(lesson);
 			$("#lesson-topic").html(lesson.topics);
 			$("#lesson-desc").html(lesson.description);
 			
@@ -338,7 +338,7 @@ $(document).ready(function() {
 		}).done(function( data) {
             data = $.parseJSON(data);
              $("#homework-list tr.hwr").remove();
-             console.log(data);
+           //  console.log(data);
             $.each(data, function(index, value) {
                 var submitted = value.submitted?value.submitted:'&mdash;';
                 var graded = value.graded?value.graded:'&mdash;';
@@ -365,15 +365,13 @@ $(document).ready(function() {
 	}).done(function( data) {
 		data = $.parseJSON(data);
 		syllabus = data[syllabus_id];
-		console.log(syllabus);
-		$("#course-info , title").html(syllabus.course_name+"&nbsp;||&nbsp;"+syllabus.srjc_id+"&nbsp;||&nbsp;"+syllabus.semester);
+	//	console.log(syllabus);
+		$("#course-info , title").html(syllabus.course_name+"&nbsp;|&nbsp;"+syllabus.srjc_id+"&nbsp;|&nbsp;"+syllabus.semester);
         $("#cccconfer .modal-body").html(syllabus.lecture_instructions);
 		var i = 1;
 		$.each(syllabus.lessons, function(index, value) {
-            var lessonDate = new Date(value.sort_date);
-            lessonDate = (lessonDate.getMonth() + 1) + "/" + lessonDate.getDate();
             var lessonClass = (value.is_active == 0 && profileObject.type == 'student') ? "lesson-listing" : "lesson-listing isactive";
-            $("#lesson-list").append('<tr class="'+lessonClass+'" data-index='+i+' data-id='+value.lesson_id+'><td>'+lessonDate+'</td><td>'+value.topics+'</td></tr>');
+            $("#lesson-list").append('<tr class="'+lessonClass+'" data-index='+i+' data-id='+value.lesson_id+'><td>'+value.lesson_date+'</td><td>'+value.topics+'</td></tr>');
 			++i;
 		});
 		$(".isactive").click(function() {

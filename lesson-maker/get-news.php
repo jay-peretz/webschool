@@ -1,6 +1,6 @@
 <?php 
 require_once('sql-jperetz.php');
-$selectnews = $mysqli->query('select * from news order by posted desc limit 5');
+$selectnews = $mysqli->query('select * from news order by posted desc limit 15');
 $i = 0;
 while ($newsitem = $selectnews->fetch_object()) {
     $news[$i] = $newsitem;

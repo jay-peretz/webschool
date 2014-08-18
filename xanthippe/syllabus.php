@@ -51,7 +51,7 @@ case 'get':
 					$students->close();
 				}
 				/* Select the lessons in date order */
-				if ($lessons = $mysqli->query("SELECT lesson_id, topics, description, lesson.lesson_date as sort_date, DATE_FORMAT(lesson_date,'%M %e, %Y' ) as lesson_date, blogpost, is_active FROM lesson WHERE syllabus_syllabus_id = ".$syllabus->syllabus_id." ORDER BY sort_date ASC")) {
+				if ($lessons = $mysqli->query('SELECT lesson_id, topics, description, lesson.lesson_date as sort_date, DATE_FORMAT(lesson.lesson_date,"%b %e") as lesson_date, blogpost, is_active FROM lesson WHERE syllabus_syllabus_id = '.$syllabus->syllabus_id.' ORDER BY sort_date ASC')) {
 					while ($lesson = $lessons->fetch_object()) {
 						$syllabus_array[$syllabus->syllabus_id]->lessons[$lesson->lesson_id] = $lesson;
 					}
