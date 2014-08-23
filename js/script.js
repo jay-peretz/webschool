@@ -22,7 +22,11 @@ $(document).ready(function() {
 			}	
 			if (data.project_description) {
 				$('#myproject').val(data.project_description);
-			}		  
+			}	
+            if (data.getforumemail == 1) {
+                
+                $('#getemail').prop('checked',true);
+            }
 		});
 	};
     var getNews = function() {
@@ -453,8 +457,13 @@ $(document).ready(function() {
 	$('#studentid').text(user);
 	getProfile(user);
 	$("#update-profile").click(function() {
-		if ($('#galleryurl').text() || $('#githubaccount').text() || $('#myproject').val()) {
-			var profile = {email:user,syllabus_id:syllabus_id,gallery_URL:$('#galleryurl').text() , github_userid:$('#githubaccount').text() , project_description: $('#myproject').val()}
+            var emailflag;
+            if ($('#getemail').prop('checked')) {
+                emailflag = 1;
+            } else {
+                emailflag = 0;
+            }
+			var profile = {email:user,syllabus_id:syllabus_id,gallery_URL:$('#galleryurl').text() , github_userid:$('#githubaccount').text() , project_description: $('#myproject').val(),emailflag: emailflag}
 			$.ajax({
 				type: "POST",
 				url: getRootPath()+"lesson-maker/put-profile.php",
@@ -466,9 +475,10 @@ $(document).ready(function() {
 				syllabus.students[user].project_description = profile.project_description;
 				syllabus.students[user].gallery_URL = profile.gallery_URL;
 				syllabus.students[user].github_userid = profile.github_userid;
+                
 				$("#myprofile").modal('hide');
 			});
-		}
+		
 	});
 	//   submit homework
 	

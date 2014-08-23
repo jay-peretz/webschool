@@ -167,6 +167,7 @@ var forumArchive = "2013-11-30";
   <p id="galleryurl" class="span5" contenteditable=true></p>
      <p class="span5">Your final project proposal</p>
  <p class="span5"> <textarea columns=600 rows=2 id="myproject" name="myproject" ></textarea></p>
+ <p class="span5">Subscribe to Forum <input type="checkbox" id="getemail" /></p>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">Close</a>
