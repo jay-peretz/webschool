@@ -14,7 +14,6 @@ if ($_POST['comment'] && $_POST['user'] && $_POST['inreplyto']) {
 }
 $queryclass = "select email from jperetz.class c, jperetz.student s where s.email = c.student_email and getforumemail = 1 and syllabus_syllabus_id=".$_POST['syllabus'];
 $result = $mysqli->query($queryclass);
-echo $result;
 while($row=$result->fetch_array()){
         if($to=='')
         $to.=$row['email'];
