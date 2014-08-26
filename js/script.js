@@ -574,6 +574,15 @@ $(document).ready(function() {
             }
         });
     }
+    var mailforum = function(topic, comment, syllabus) {
+        $.ajax({
+	       type: "POST",
+           url: getRootPath()+"forum/new-forum-mail.php",
+		   data: {topic: topic, comment: comment, syllabus: syllabus},
+           datatype: "json"
+	    }).done(function(data) {
+		});
+    }
 	
 	var getforum = function() {
 		var forum;
@@ -611,14 +620,17 @@ $(document).ready(function() {
 			$(".reply-button").on("click", function() {				
 					var comment = $(this).parent().children(":first").val();
 					var parent = $(this).attr("data-id");
+                   var forumdata = {comment:comment, user : user, inreplyto: parent, syllabus: syllabus_id};
 					$.ajax({
 					   type: "POST",
 					   url: getRootPath()+"forum/new-forum.php",
-					   data: {comment:comment, user : user, inreplyto: parent, syllabus: syllabus_id},
+					   data: forumdata,
 					   datatype: "json"
 					}).done(function(data) {
 						alert("Your comment was added.");
 						getforum();
+                        var data = $.parseJSON(data);
+                       mailforum(data.topic, data.comment, data.syllabus);
 					});
 					
 			});		
@@ -628,14 +640,17 @@ $(document).ready(function() {
 	$("#newpostbtn").on("click", function() {
 		var comment = $("#newpost").val();
         var topic = $("#forumtopic").val();
+        var forumdata = {topic: topic, comment:comment, user : user, syllabus: syllabus_id};
 		$.ajax({
 	       type: "POST",
            url: getRootPath()+"forum/new-forum.php",
-		    data: {topic: topic, comment:comment, user : user, syllabus: syllabus_id},
+		    data: forumdata,
            datatype: "json"
 	    }).done(function(data) {
 			alert("Your comment was added.");
+            var data = $.parseJSON(data);
 			getforum();
+            mailforum(data.topic, data.comment, data.syllabus);
 		});
 		
 	});
