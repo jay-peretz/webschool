@@ -630,7 +630,9 @@ $(document).ready(function() {
 						alert("Your comment was added.");
 						getforum();
                         var data = $.parseJSON(data);
-                       mailforum(data.topic, data.comment, data.syllabus);
+                       if (data.comment != "")  {
+                            mailforum(data.topic, data.comment, data.syllabus);
+                        }
 					});
 					
 			});		
@@ -650,7 +652,9 @@ $(document).ready(function() {
 			alert("Your comment was added.");
             var data = $.parseJSON(data);
 			getforum();
-            mailforum(data.topic, data.comment, data.syllabus);
+            if (data.comment != "")  {
+                mailforum(data.topic, data.comment, data.syllabus);
+            }
 		});
 		
 	});

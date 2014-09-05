@@ -30,16 +30,14 @@ var user = '<?php print $_SESSION['user']['email'] ?>';
 <nav class="row">
 <div class="span12">
 <ul class="nav nav-pills">
-   <li><a href="../index.php/html5/">HTML5 Home</a></li>
+  
     <li><a href="../index.php/javascript/">Javascript Home</a></li>
-     <li><a href="../wiki/">Wiki</a></li>
+     
 </ul>
 </div>
 </nav>
 
-  <div class="row">
-  <h3>Class Forum</h3>
-         <div class="span12">
+  <div class="span12">
          
            <div class="row"> 
             <div class="well row"><p class="span5"><small>This forum is the place to ask any questions regarding the topics of the class and to reply and help your fellow students.  Participation is included in your grade.  The forum is shared by students in both the HTML5 and Javascript classes.  Please share PERTINENT, BRIEF,  APPROPRIATE & HELPFUL comments only. <em>You can add links using the HTML &lt;a href=http://...&gt; tag.</em> DO NOT PUT JAVASCRIPT into this form.   </small> </p>
@@ -67,16 +65,11 @@ var user = '<?php print $_SESSION['user']['email'] ?>';
 </div>
 </div>
             
-            <div id="forum-list"></div>
-          
-            
-            
-            
+            <div id="forum-list" class="row"></div>
+          <!--  <p><a href="http://www.santarosa.edu/~jperetz/fall2013/forum/">Earlier Forum Posts</a></p>-->
+                  
             </div>
-            </div> 
-        
-         
-         </div>
+            </div>
    
   </div>  
   

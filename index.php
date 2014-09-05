@@ -46,7 +46,7 @@ var user = '<?php print $_SESSION['user']['email'] ?>';
 var syllabus_id = <?php print $syllabus_id; ?>;
 var currentWeek =  2; 
 var currentLesson = 2; 
-var forumArchive = "2013-11-30";
+var forumArchive = "2014-09-01";
 </script>
 <script src="<?php echo $root_path; ?>js/jquery.mobile.custom.min.js"></script>
 <script src="<?php echo $root_path; ?>js/script.js"></script>
@@ -245,6 +245,7 @@ $mysqli->close(); // Close the connection
   <li><a href="#" id="profile" data-toggle="modal" data-target="#myprofile">Your Profile</a></li>
    <li><a href="#" id="ccclectures" data-toggle="modal" data-target="#cccconfer">Video Lectures</a></li>
     <li><a href="#" id="newsmenu" data-toggle="modal" data-target="#news-viewer">News</a></li>
+    <li><a href="http://www.santarosa.edu/~jperetz/">Syllabus</a></li>
   <li><a href="#" id="logout">Logout</a></li>
 </ul>
 </div>
@@ -317,7 +318,7 @@ $mysqli->close(); // Close the connection
 </div>
             
             <div id="forum-list" class="row"></div>
-          <!--  <p><a href="http://www.santarosa.edu/~jperetz/fall2013/forum/">Earlier Forum Posts</a></p>-->
+            <p><a href="http://www.santarosa.edu/~jperetz/webschool/forum/">Earlier Forum Posts</a></p>
                   
             </div>
             </div> 
