@@ -44,9 +44,9 @@ var scriptPath = '<?php echo $_SERVER["SCRIPT_NAME"] ?>';
 var syllabusURI = '<?php echo $uri[ 0 ] ?>';
 var user = '<?php print $_SESSION['user']['email'] ?>';
 var syllabus_id = <?php print $syllabus_id; ?>;
-var currentWeek =  2; 
-var currentLesson = 2; 
-var forumArchive = "2014-09-01";
+var currentWeek =  7; 
+var currentLesson = 7; 
+var forumArchive = "2014-09-15";
 </script>
 <script src="<?php echo $root_path; ?>js/jquery.mobile.custom.min.js"></script>
 <script src="<?php echo $root_path; ?>js/script.js"></script>

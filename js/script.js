@@ -235,11 +235,11 @@ $(document).ready(function() {
 					case "test":
 						$.each(lesson.assignments[a_id].exercises[e_id].questions,function(index, question) {
 						//	exercisecontent += '<p class="span5">'+escapeHtml(question.text)+'&nbsp;<small><strong>('+question.value+'&nbsp;Point'+(question.value != 1 ? 's' : '')+')</strong></small><br />';
-						    exercisecontent += '<p class="span5">'+escapeHtml(question.text)+'<br />';
+						    exercisecontent += '<p class="span5">'+question.text+'<br />';
 							$.each(question.options,function(index2, option) {
 								if (typeof index2 === 'string')
 									index2 = parseInt(index2);
-								exercisecontent += '<input type="radio" name="exercise-q'+index+'" id="exercise-q'+index+'-o'+index2+'" value="'+index2+'" /><label for="exercise-q'+index+'-o'+index2+'">'+String.fromCharCode(96 + index2)+') '+escapeHtml(option)+'</label>';
+								exercisecontent += '<input type="radio" name="exercise-q'+index+'" id="exercise-q'+index+'-o'+index2+'" value="'+index2+'" /><label for="exercise-q'+index+'-o'+index2+'">'+String.fromCharCode(96 + index2)+') '+option+'</label>';
 							});
 							exercisecontent += '</p>';
 						});

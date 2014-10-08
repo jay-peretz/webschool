@@ -9,8 +9,9 @@ while($row=$result->fetch_array()){
         $to.=','.$row['email'];
     }
 $headers = 'From: SRJC Class Forum <jperetz@santarosa.edu>' . "\r\n";
+$headers .= 'Content-Type: text/html; charset=UTF-8'. "\r\n";
 $headers .= 'Bcc: '. $to . "\r\n";
-$message = "A new comment was posted on the class forum \n\n".$_POST['topic']."\n\n".$_POST['comment']."\n\nPlease DO NOT REPLY to this email.   Go to the class page and leave your reply on the forum there.";
+$message = "<h4>A new comment was posted on the class forum </h4><p>".$_POST['topic']."</p><p>".$_POST['comment']."</p><p>Please DO NOT REPLY to this email.   Go to the class page and leave your reply on the forum there.</p>";
 mail( "jperetz@santarosa.edu" , "SRJC Forum: ".$_POST['topic'], $message, $headers);
 $mysqli->close(); 
 ?>
